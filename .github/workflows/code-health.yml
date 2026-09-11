@@ -1,0 +1,28 @@
+name: Code Health Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-codebase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Validate File Integrity
+        run: |
+          echo "Checking repository structure..."
+          test -f index.html || (echo "index.html missing" && exit 1)
+          test -f style.css || (echo "style.css missing" && exit 1)
+          test -f script.js || (echo "script.js missing" && exit 1)
+          echo "All critical source files verified."
+
+      - name: Verify JavaScript Syntax
+        run: |
+          node -c script.js
+          echo "script.js passed basic syntax compilation."
