@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #faf6eb;
+}
+
+.calculator {
+    width: 320px;
+    background-color: #f3edd7;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(139, 126, 92, 0.15);
+    border: 1px solid #e5dcbe;
+}
+
+.display {
+    width: 100%;
+    height: 70px;
+    background-color: #fffdf6;
+    color: #4a422d;
+    font-size: 2rem;
+    text-align: right;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid #e5dcbe;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 18px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #eaddc3;
+    color: #5c5237;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #dfd0b2;
+}
+
+.operator {
+    background-color: #eab64f;
+    color: #fff;
+}
+
+.operator:hover {
+    background-color: #d6a23b;
+}
+
+.clear {
+    background-color: #e06d53;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #cc5a40;
+}
+
+.equal {
+    grid-row: span 2;
+    background-color: #7fa973;
+    color: #fff;
+}
+
+.equal:hover {
+    background-color: #6b945f;
+}
+
+.zero {
+    grid-column: span 2;
+}
